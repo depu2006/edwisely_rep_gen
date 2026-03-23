@@ -1,0 +1,171 @@
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6efe7;
+}
+
+/* WELCOME */
+.welcome {
+  text-align: right;
+  padding: 15px 40px;
+  font-weight: bold;
+  color: #4a2f1b;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  margin: 30px 50px;
+  height: 420px;
+  border-radius: 25px;
+  overflow: hidden;
+
+  background: url("https://images.unsplash.com/photo-1509062522246-3755977927d7")
+    center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+}
+
+/* GLASS EFFECT */
+.hero-overlay {
+  width: 50%;
+  margin-left: auto;
+  margin-right: 40px;
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* TEXT */
+.hero-text h1 {
+  font-size: 42px;
+  color: #3e2a1f;
+}
+
+.hero-text p {
+  color: #5e4636;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  margin: 6px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: 1px solid #3e2a1f;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #3e2a1f;
+}
+
+.buttons button:hover {
+  background: #3e2a1f;
+  color: white;
+}
+
+.buttons .dark {
+  background: #3e2a1f;
+  color: white;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 25px;
+  padding: 20px 50px;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+/* BOX (for filter + chart) */
+.box {
+  margin: 20px 50px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(232, 213, 196, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* INPUTS */
+select,
+input {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #f3e6da;
+  margin: 5px;
+  outline: none;
+}
+
+/* CHART */
+.chart-box {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6d4c3d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    padding: 20px;
+  }
+
+  .hero-overlay {
+    width: 100%;
+    margin: 0;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
