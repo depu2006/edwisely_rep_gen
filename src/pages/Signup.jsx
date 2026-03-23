@@ -15,7 +15,18 @@ export default function Signup() {
 
   const handleSignup = async () => {
     try {
-      await axios.post("http://localhost:5000/signup", form);
+      const response = await fetch('https://edwisely-rep-gen.onrender.com/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.msg || 'Signup failed');
+      }
 
       // ✅ SUCCESS MESSAGE
       alert("✅ Thank you for registering with EDWISELY!");

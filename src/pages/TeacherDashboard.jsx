@@ -24,7 +24,7 @@ function TeacherDashboard() {
   const [assignmentParams, setAssignmentParams] = useState({ name: '', exam: 'Mid Term', math_score: '', reading_score: '', writing_score: '' });
 
   const fetchStudents = () => {
-    fetch("http://localhost:5000/students")
+    fetch("https://edwisely-rep-gen.onrender.com/students")
       .then(res => res.json())
       .then(fetched => {
         const formatted = [];
@@ -46,7 +46,7 @@ function TeacherDashboard() {
 
   const handleAddMarks = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:5000/add-mark", {
+    await fetch("https://edwisely-rep-gen.onrender.com/add-mark", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(assignmentParams)
@@ -149,7 +149,7 @@ function TeacherDashboard() {
             <div className="hero-actions">
               <button className="pill-btn solid" onClick={scrollToData}>View Class Data</button>
               <button className="pill-btn" onClick={() => setShowModal(true)}>Add Assignment</button>
-              <button className="pill-btn" onClick={() => window.location.href="http://localhost:5000/download-report"}>Export Roster &gt;</button>
+              <button className="pill-btn" onClick={() => window.location.href="https://edwisely-rep-gen.onrender.com/download-report"}>Export Roster &gt;</button>
             </div>
           </div>
         </div>

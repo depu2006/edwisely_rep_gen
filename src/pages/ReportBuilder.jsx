@@ -35,7 +35,7 @@ const ReportBuilder = ({ studentData }) => {
     setLoading(true);
     setHasStarted(true);
     try {
-      const response = await fetch('http://localhost:5000/generate-report', {
+      const response = await fetch('https://edwisely-rep-gen.onrender.com/generate-report', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -12,8 +12,20 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/login", form);
-      const user = res.data;
+      const response = await fetch('https://edwisely-rep-gen.onrender.com/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Login failed');
+      }
+
+      const user = await response.json();
 
       localStorage.setItem("currentUser", JSON.stringify(user));
 

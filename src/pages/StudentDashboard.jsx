@@ -19,7 +19,7 @@ function StudentDashboard() {
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/students")
+    fetch("https://edwisely-rep-gen.onrender.com/students")
       .then(res => res.json())
       .then(fetched => {
         // Filter purely for the logged-in student if they have records, otherwise show all data as fallback for demo
